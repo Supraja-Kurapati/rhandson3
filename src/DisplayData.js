@@ -1,40 +1,35 @@
 import React from 'react'
-const DisplayData = ({valu, toggle}) => {
+const DisplayData = ({value, toggle}) => {
+  const fieldstyle={
+    height:" 30px",
+    width:" 150px",
+    backgroundColor:"white",
+    border:"1px solid black",
+    borderRadius:" 20px",
+    fontSize:"large ",
+    margin:"10px",
+    boxShadow:"2px 2px 2px black",
+    FontFamily:"serif"
+  }
+
+
   return (
-    <div>
-    {valu.map((item,index)=>{
+    <div >
+    {value.map((item,index)=>{
        return(
         <>
-        <h1 key={index} >{item.name}</h1>  
-        <h1 key={index}>{item.dept}</h1>        
-        <h1 key={index} >{item.rating}</h1>        
+        <div className='displaydata'>
+        <p key={index} style={{margin:"5px"}}>NAME: {item.name}</p>  
+        <p key={index} style={{margin:"5px"}}>DEPARTMENT: {item.dept}</p>        
+        <p key={index} style={{margin:"5px"}}>RATING: {item.rating}</p> 
+        </div>       
         </>
        )
     })}
-    <button onClick={toggle}>Back</button>
+    <button onClick={toggle} style={fieldstyle}>Back</button>
 
     </div>
   )
 }
 export default DisplayData
 
-//Prevcode
-
-// import React from 'react'
-// const DisplayData = ({value, toggle}) => {
-//   return (
-//     <div>
-//     {value.map((item,index)=>{
-//        return(
-//         <>
-//         <h1 key={index} >{item.name}</h1>  
-//         <h1 key={index}>{item.dept}</h1>        
-//         <h1 key={index} >{item.rating}</h1>        
-//         </>
-//        )
-//     })}
-//     <button onClick={toggle}>Back</button>
-
-//     </div>
-//   )
-// }
